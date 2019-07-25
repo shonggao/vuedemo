@@ -2,6 +2,7 @@ import Vue from 'vue';
 
 //导入 MUI 的样式
 import './lib/mui/css/mui.min.css';
+import './lib/mui/css/icons-extra.css';
 
 //按需导入mint-ui中的组件
 import {Header} from 'mint-ui';
