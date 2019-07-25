@@ -5,3 +5,9 @@
 ###我们是有灵魂的程序员，所以我们的代码富有诗意。
 
 #### [开源协议之间的区别] (https://www.zhihu.com/question/19568896)
+
+## 用传统方式命令行把修改后的代码上传到Github
+1、git add
+2、git commit -m "提交信息"
+3、git push
+
