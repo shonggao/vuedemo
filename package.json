@@ -6,8 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack",
-    "dev": "webpack-dev-server --open",
-    "build": "webpack-dev-server --hide-modules"
+    "dev": "webpack-dev-server --port 3000 --open",
+    "build": "webpack-dev-server --hide-modules",
+    "localSvr": "serve --port 8080",
+    "watch": "webpack --watch"
   },
   "author": "",
   "license": "ISC",
@@ -29,6 +31,7 @@
   },
   "dependencies": {
     "mint-ui": "^2.2.13",
+    "moment": "^2.24.0",
     "vue": "^2.6.10",
     "vue-resource": "^1.5.1",
     "vue-router": "^3.0.7"
