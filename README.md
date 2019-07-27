@@ -49,7 +49,7 @@
 ## 单独封装一个 comment.vue 评论子组件
 1. 先创建一个 单独的 Comment.vue 组件模板
 2. 在需要使用 Comment 组件的页面中，先导入 comment 组件
- + 'import comment from './Comment.vue''
+ + `import comment from './Comment.vue'`
 3. 在父组件中，使用'components'属性，将刚才导入的 comment 组件，注册为自己的 子组件
 4. 将注册子组件时候的，注册名称，以标签形式，在页面中引用即可
 
