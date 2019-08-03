@@ -100,8 +100,18 @@ export default {
             this.$router.push({ name: "goodscomment", params:{ id }})
         },
         addToShopCar(){
+            //添加到购物车
             this.ballFlag = !this.ballFlag;
-            
+            // { id：商品id ,count: 要购买的数量 , price:商品的单价 , selected: true | false}
+            //拼接出一个要保存到 store 中 car 数组里的商品信息对象
+            var goodsInfo = { 
+                id: this.id,
+                count: this.selectedCount,
+                price: this.goodsInfo.sell_price,
+                selected: true 
+            };
+            //调用 store 中的 mutations 来将商品加入购物车
+            this.$store.commit("addToCar",goodsInfo);
         },
         beforeEnter(el){
             el.style.transform = "translate(0,0)";

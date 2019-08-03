@@ -4,7 +4,11 @@
         <!--中间 路由 router-view区域-->
         <!--底部 Tabbar(router-link)区域-->
         
-		<mt-header fixed title="黑马程序员 Vue项目" class="header-container"></mt-header>
+		<mt-header fixed title="黑马程序员 Vue项目" class="header-container">
+			<span slot="left" @click="goBack()" v-show="flag">
+				<mt-button icon="back">返回</mt-button>
+			</span>
+		</mt-header>
 		<transition>
 		    <router-view></router-view>
 		</transition>
@@ -18,7 +22,7 @@
 				<span class="mui-tab-label">会员</span>
 			</router-link>
 			<router-link class="mui-tab-item-11b" to="/shopcar">
-				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">9</span></span>
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge" id="badge">{{ $store.getters.getAllCount }}</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
 			<router-link class="mui-tab-item-11b" to="/search">
@@ -32,6 +36,30 @@
 <script>
     export default {
 		name: 'app',
+		data() {
+			return {
+				flag: false
+			}
+		},
+		created() {
+			this.flag = this.$route.path === '/home' ? false : true;
+		},
+		methods: {
+			goBack(){
+				//点击后退
+				this.$router.go(-1);
+			}
+		},
+		watch: {
+			'$route.path': function(newVal){
+				if(newVal == '/home'){
+					this.flag = false;
+				}
+				else{
+					this.flag = true;
+				}
+			}
+		},
     }
 </script>
 
